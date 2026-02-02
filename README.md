@@ -1,1 +1,37 @@
-# soc-lab-linux-ssh-incident
+# SOC Lab – Linux SSH Incident Investigation
+
+## Overview
+This lab documents a SOC Level 1 investigation of a Linux SSH compromise using Splunk and auditd logs.
+
+## Scenario
+A phishing attack resulted in credential compromise of a CEO account.
+An attacker performed multiple failed SSH attempts, successfully authenticated, escalated privileges, created persistence, and accessed sensitive files.
+
+## Environment
+- Ubuntu Linux (victim VM)
+- Kali Linux (attacker VM)
+- Splunk Enterprise
+- auditd
+
+## Tools Used
+- Splunk SIEM
+- auditd
+- Linux authentication logs
+- SSH
+
+## Objectives
+- Detect SSH brute-force activity
+- Identify successful authentication
+- Investigate sudo usage
+- Detect account creation and persistence
+- Confirm access to sensitive files
+- Correlate auditd and Splunk logs
+
+## Outcome
+Unauthorized access was confirmed.
+Privilege escalation and persistence were observed.
+Sensitive files were accessed.
+No confirmed data exfiltration was detected.
+
+## Disclaimer
+This lab was conducted in a controlled environment for defensive security learning only.
