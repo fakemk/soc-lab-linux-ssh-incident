@@ -9,3 +9,6 @@ This indicates a password-guessing or brute-force attempt prior to successful ac
 ### Why this matters
 Repeated authentication failures are a common precursor to account compromise
 and must be investigated immediately by SOC analysts.
+### MITRE ATT&CK
+- T1110 – Brute Force
+- T1078 – Valid Accounts (attempted)
