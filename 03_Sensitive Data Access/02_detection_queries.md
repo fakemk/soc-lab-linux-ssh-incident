@@ -30,10 +30,14 @@ Timestamp and host where the activity occurred
 ---
 
 
-#2. Host-Based Investigation (auditd)
+## 2. Host-Based Investigation (auditd)
+
 auditd Rule Triggered
+
 -w /home/martin_kedob/CompanySecrets -p rwa -k sensitive_access
+
 ---
+
 # This rule monitors:
 
 Read operations on sensitive files
