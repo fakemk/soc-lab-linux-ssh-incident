@@ -1,15 +1,15 @@
-##Stage 4 – Privilege Escalation and Persistence
+# Stage 4 – Privilege Escalation and Persistence
 
-#What happened
-The attacker used sudo privileges to create a new local user with a deceptive name, modified group membership, and edited account configuration files.
+## What happened
+The attacker abused sudo privileges to create a new local user with a deceptive name, modified group memberships, and edited account configuration files to maintain access.
 
-Why this matters
-Unauthorized account creation and privilege assignment allows long-term persistent access.
+## Why this matters
+Account creation and privilege manipulation enable long-term persistence and bypass normal access controls.
 
-MITRE ATT&CK
-• T1136.001 – Create Account (Local)
-• T1098 – Account Manipulation
-• T1547 – Boot or Logon Autostart Execution
+## MITRE ATT&CK
+- T1136.001 – Create Account (Local)
+- T1098 – Account Manipulation
+- T1547 – Boot or Logon Autostart Execution
 
-Evidence
-Auditd and Splunk logs confirm user creation, group modification, and account configuration changes.
+## Evidence
+Auditd and Splunk logs show sudo usage, user creation, group modification, and account configuration file edits.
