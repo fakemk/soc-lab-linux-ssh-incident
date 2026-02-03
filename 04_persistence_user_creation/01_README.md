@@ -1,5 +1,4 @@
-
-tage 4 – Privilege Escalation and Persistence
+stage 4 – Privilege Escalation and Persistence
 
 What happened
 The attacker used sudo privileges to create a new local user with a deceptive name, modified group membership, and edited account configuration files.
