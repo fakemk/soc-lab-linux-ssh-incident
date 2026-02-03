@@ -8,7 +8,7 @@ Identify post-compromise access to sensitive corporate data using both SIEM (Spl
 ## 1. Splunk Detection (SIEM)
 
 ### Primary Detection Query
-```spl
+
 index=main sourcetype=linux_audit "CONFIDENTIAL_CEO_STRATEGY_Q4"
 Supporting Query
 index=main sourcetype=linux_audit type=EXECVE
@@ -61,7 +61,7 @@ Host-level confirmation of activity observed in Splunk
 
 -----
 
-3Why this matters
+#Why this matters
 
 Confirms execution of post-compromise objectives (data access)
 
