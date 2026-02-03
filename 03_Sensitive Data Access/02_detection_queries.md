@@ -10,12 +10,14 @@ Identify post-compromise access to sensitive corporate data using both SIEM (Spl
 ### Primary Detection Query
 
 index=main sourcetype=linux_audit "CONFIDENTIAL_CEO_STRATEGY_Q4"
-Supporting Query
+
+# Supporting Query
+
 index=main sourcetype=linux_audit type=EXECVE
 | search a0=cat OR a0=ls
 | table _time host a0 a1 uid auid
 ----
-#What this shows
+# What this shows
 
 Execution of file access commands (cat, ls) against sensitive files
 
@@ -32,7 +34,7 @@ Timestamp and host where the activity occurred
 auditd Rule Triggered
 -w /home/martin_kedob/CompanySecrets -p rwa -k sensitive_access
 ---
-#This rule monitors:
+# This rule monitors:
 
 Read operations on sensitive files
 
@@ -44,7 +46,7 @@ All activity within the CompanySecrets directory
 
 ---
 
-#auditd Investigation Commands
+# auditd Investigation Commands
 sudo ausearch -k sensitive_access -i
 or
 sudo ausearch -k cmd_exec -i | grep "CONFIDENTIAL_CEO_STRATEGY_Q4"
@@ -61,7 +63,7 @@ Host-level confirmation of activity observed in Splunk
 
 -----
 
-#Why this matters
+# Why this matters
 
 Confirms execution of post-compromise objectives (data access)
 
