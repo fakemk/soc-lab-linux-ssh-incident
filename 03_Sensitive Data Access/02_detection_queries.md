@@ -26,11 +26,21 @@ User context (uid, auid) responsible for the access
 Timestamp and host where the activity occurred
 
 2. Host-Based Investigation (auditd)
-auditd Rule Triggered
--w /home/martin_kedob/CompanySecrets -p rwa -k sensitive_access
+auditd Rule Triggered : sudo ausearch -k sensitive_access -i
+What this rule monitors
+
+Read operations on sensitive files
+
+Write operations to sensitive directories
+
+Attribute changes (metadata or permissions)
+
+All activity within the CompanySecrets directory
+
 auditd Investigation Commands
 sudo ausearch -k sensitive_access -i
-Alternative focused investigation: sudo ausearch -k cmd_exec -i | grep "CONFIDENTIAL_CEO_STRATEGY_Q4"
+OR
+sudo ausearch -k cmd_exec -i | grep "CONFIDENTIAL_CEO_STRATEGY_Q4"
 What this confirms
 
 Direct interaction with sensitive files after successful SSH authentication
@@ -49,4 +59,4 @@ Demonstrates attacker intent beyond initial access
 
 Validates SIEM alerts using authoritative host-based evidence
 
-Establishes high-impact breach involving sensitive corporate data
+Establishes high-impact breach involving sensitive corporate data.
