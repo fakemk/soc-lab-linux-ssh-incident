@@ -1,4 +1,4 @@
-####Stage 2 – Successful SSH Authentication
+##Stage 2 – Successful SSH Authentication
 
 What happened
 After multiple failed SSH attempts, the attacker successfully authenticated using valid credentials for the user martin_kedob.
