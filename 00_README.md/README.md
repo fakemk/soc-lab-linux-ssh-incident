@@ -1,7 +1,7 @@
 # SOC Lab – Linux SSH Incident Investigation
 
 ## Overview
-This lab documents a SOC Level 1 investigation of a Linux SSH compromise using Splunk and auditd logs.
+TThis lab documents a SOC Level 1 investigation of a Linux SSH compromise involving brute-force authentication, privilege escalation, and persistence, using Splunk and auditd logs.
 
 ## Scenario
 A phishing attack resulted in credential compromise of a CEO account.
