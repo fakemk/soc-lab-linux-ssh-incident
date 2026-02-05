@@ -11,4 +11,4 @@ Repeated authentication failures are a common precursor to account compromise
 and must be investigated immediately by SOC analysts.
 ### MITRE ATT&CK
 - T1110 – Brute Force
-- T1078 – Valid Accounts (attempted)
+
