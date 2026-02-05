@@ -7,7 +7,7 @@ This stage was identified using both Splunk and auditd logs to confirm account c
 ## Splunk – User Creation Activity
 
 ### Query
-```spl
+
 index=main sourcetype=linux_audit useradd
 Explanation
 
@@ -16,11 +16,11 @@ Multiple events confirmed the creation of a new local user shortly after sensiti
 
 These events indicate deliberate persistence rather than normal administrative activity.
 
-auditd – Command Execution Confirmation
-Command
+## Auditd – Command Execution Confirmation
+Command : 
 sudo ausearch -k cmd_exec -i | grep "useradd"
 
-Explanation
+- Explanation
 
 This command extracts audit events tagged with cmd_exec related to useradd.
 The output confirms:
@@ -31,15 +31,16 @@ The UID and EUID used (root)
 
 The shell and execution context
 
-auditd – Privilege Modification Evidence
+## Auditd – Privilege Modification Evidence
 Command
 sudo ausearch -k cmd_exec -i | grep "usermod"
 
-Explanation
+- Explanation
 
 This confirms the execution of usermod to add the persistence account to the sudo group.
 The presence of repeated execution attempts suggests intentional configuration rather than error.
-auditd – Account Configuration File Access
+
+## Auditd – Account Configuration File Access
 Command
 sudo ausearch -k cmd_exec -i | grep "/var/lib/AccountsService"
 
