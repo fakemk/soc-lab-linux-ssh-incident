@@ -13,6 +13,7 @@ After successfully authenticating using valid credentials, the attacker escalate
 - Kali Linux (attacker VM)
 - Splunk Enterprise
 - auditd
+- Splunk Enterprise (SIEM)
 
 ## Tools Used
 - Splunk SIEM
@@ -29,10 +30,7 @@ After successfully authenticating using valid credentials, the attacker escalate
 - Correlate auditd and Splunk logs
 
 ## Outcome
-Unauthorized access was confirmed.
-Privilege escalation and persistence were observed.
-Sensitive files were accessed.
-No confirmed data exfiltration was detected.
+Unauthorized access was confirmed, followed by privilege escalation, persistence via account creation, and access to sensitive files.
 
 ## Disclaimer
 This lab was conducted in a controlled environment for defensive security learning only.
