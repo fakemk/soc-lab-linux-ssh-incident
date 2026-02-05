@@ -4,7 +4,6 @@
 TThis lab documents a SOC Level 1 investigation of a Linux SSH compromise involving brute-force authentication, privilege escalation, and persistence, using Splunk and auditd logs.
 
 ## Scenario
-A phishing attack resulted in credential compromise of a CEO account.
 An attacker performed multiple failed SSH attempts, successfully authenticated, escalated privileges, created persistence, and accessed sensitive files.
 
 ## Environment
