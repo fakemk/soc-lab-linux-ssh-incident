@@ -8,31 +8,24 @@ The attacker originated from an internal IP and abused valid credentials to esca
 # 2. Timeline (UTC)
 Initial Access – Brute Force
 
-17:24:20
+~17:24
 
-Multiple SSH failed login attempts
-
-Target user: martin_kedob
-
-Source IP: 192.168.7.109
-
-Log source: /var/log/auth.log
-
-Evidence: repeated Failed password for martin_kedob
+Multiple SSH failed login attempts  
+Target user: martin_kedob  
+Source IP: 192.168.7.109  
+Log source: /var/log/auth.log  
+Evidence: repeated "Failed password for martin_kedob"
 
 Successful Authentication
 
-17:24:17
+~17:24
 
-Successful SSH login
+Successful SSH login  
+User: martin_kedob  
+Source IP: 192.168.7.109  
+Port: 33898  
+Evidence: "Accepted password for martin_kedob"
 
-User: martin_kedob
-
-Source IP: 192.168.7.109
-
-Port: 33898
-
-Evidence: Accepted password for martin_kedob
 
 Privilege Escalation
 
@@ -85,8 +78,8 @@ sudo
 Evidence:
 
 usermod -aG sudo martinkedob
-
 add 'martinkedob' to group 'sudo'
+
 17:28:45
 
 Direct modification of account service file:
@@ -125,43 +118,29 @@ Audit key: sensitive_access
 
 # 3. Indicators of Compromise (IOCs)
 Network
+- Source IP: 192.168.7.109
 
-Source IP:
+Accounts
+- Compromised user: martin_kedob
+- Persistence account: martinkedob
 
-192.168.7.109
+Files
+- CONFIDENTIAL_CEO_STRATEGY_Q4
+- CONFIDENTIAL_CEO_STRATEGY_Q4.txt.gpg
+- /var/lib/AccountsService/users/martinkedob
 
-_Accounts
+Commands
+- ssh
+- sudo
+- useradd
+- usermod
+- nano
+- cat
+- ls
 
-Compromised user:
-
-martin_kedob
-
-Malicious / persistence account:
-
-martinkedob
-
-_Files
-
-Sensitive data:
-
-CONFIDENTIAL_CEO_STRATEGY_Q4
-
-CONFIDENTIAL_CEO_STRATEGY_Q4.txt.gpg
-
-Persistence file:
-
-/var/lib/AccountsService/users/martinkedob
-
-- Commands
-ssh
-sudo
-useradd
-usermod
-nano
-cat
-ls
 
 # 4. MITRE ATT&CK Mapping
+
 Tactic	                 |Technique	              |  ID	     | Evidence
 ======================================================================================
 Initial Access	         | Brute Force	          |T1110	   | Repeated failed SSH logins
@@ -171,6 +150,7 @@ Persistence	             | Create Account	        |T1136.001 | useradd martinked
 Persistence              |	Account Manipulation	|T1098	   | usermod -aG sudo
 Defense Evasion	Modify   | System Files	          |T1565.001 | AccountsService file editing
 Collection	             |  Data from Local System|	T1005	   | Access to confidential file
+
 
 # 5. Lessons Learned
 
