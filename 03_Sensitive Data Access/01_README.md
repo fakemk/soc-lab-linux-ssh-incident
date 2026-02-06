@@ -1,7 +1,7 @@
 # Stage 3 – Sensitive Data Access
 
 ## What happened
-The attacker accessed and interacted with sensitive corporate files located in the `CompanySecrets` directory.
+The attacker accessed sensitive corporate files located in the CompanySecrets directory, including the file CONFIDENTIAL_CEO_STRATEGY_Q4.
 
 ## Why this matters
 Unauthorized access to sensitive local files can result in data leakage, extortion, or further compromise.
