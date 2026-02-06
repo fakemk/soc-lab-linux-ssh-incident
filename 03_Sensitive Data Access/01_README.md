@@ -10,4 +10,5 @@ Unauthorized access to sensitive local files can result in data leakage, extorti
 - T1005 – Data from Local System
 
 ## Evidence
-Auditd and Splunk logs confirm command execution and file access to sensitive data.
+Auditd and Splunk logs confirm command execution and access to sensitive files through commands such as cat and ls, including access to CONFIDENTIAL_CEO_STRATEGY_Q4.
+
