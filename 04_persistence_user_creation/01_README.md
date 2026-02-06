@@ -9,7 +9,8 @@ Account creation and privilege manipulation enable long-term persistence and byp
 ## MITRE ATT&CK
 - T1136.001 – Create Account (Local)
 - T1098 – Account Manipulation
-- T1547 – Boot or Logon Autostart Execution
+- T1548.003 – Abuse Elevation Control Mechanism: Sudo
+
 
 ## Evidence
 Auditd and Splunk logs show sudo usage, user creation, group modification, and account configuration file edits.
