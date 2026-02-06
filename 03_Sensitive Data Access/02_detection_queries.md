@@ -14,8 +14,11 @@ index=main sourcetype=linux_audit "CONFIDENTIAL_CEO_STRATEGY_Q4"
 # Supporting Query
 
 index=main sourcetype=linux_audit type=EXECVE
+
 | search a0=cat OR a0=ls
+
 | table _time host a0 a1 uid auid
+
 ----
 # What this shows
 
